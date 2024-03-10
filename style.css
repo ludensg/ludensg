@@ -28,19 +28,17 @@
     --color-accent: #03000f; 
     --color-accent2: #6b6b6b; 
 }
-
-body, html {
-margin: 0;
-padding: 0;
-font-family: 'helvlight', sans-serif;
-background-color: #cbcbca8c;
-box-sizing: border-box;
-position: relative;
-top: 0;
-left: 0;
-bottom: 0;
-right: 0;
-}
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'helvlight', sans-serif;
+    background-color: #cbcbca8c;
+    box-sizing: border-box;
+    width: 100%; /* Ensures full width */
+    height: 100%; /* Ensures full height */
+    min-height: 100vh; /* Ensures at least the full height of the viewport */
+  }
+  
 
 *, *:before, *:after {
 box-sizing: inherit;
@@ -62,7 +60,7 @@ margin: 0 auto; /* Center the container */
 
 h1 {
 font-size: calc(6px + 2vw);
-color: #3d3522de;
+color: #3d3522c2;
 font-family: 'helvbold', sans-serif;
 margin-left: -5px; 
 margin-bottom: 0; /* Adjust the space between title and subtitle */
@@ -91,10 +89,10 @@ p.subtitle {
     font-size: .8em;
     line-height: 1.5;
     color: var(--color-reg-text);
-    background-color: rgba(189, 212, 219, 0.356);
+    background-color: rgba(236, 233, 225, 0.356);
     padding: 1em;
     padding-top: .5em;
-    padding-bottom: .2em;
+    padding-bottom: 0em;
     text-align: justify;
     border-left: 2px solid var(--color-accent2);
     max-height: 80vh; /* Example max-height, adjust based on your design */
@@ -146,12 +144,16 @@ p.subtitle {
     bottom: 0;
     right: 0;
     background: 
-    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), /* Original linear gradient */
-    linear-gradient(40deg, rgba(121, 195, 255, 0.329), rgba(48, 153, 252, 0.527), rgba(0, 0, 255, 0.06)); /* Rotated linear gradient */
+    linear-gradient(rgba(20, 19, 19, 0.74) 50%, rgba(167, 153, 31, 0.25) 50%), /* Original linear gradient */
+    linear-gradient(90deg, rgba(255, 197, 121, 0.329), rgba(37, 109, 177, 0.527), rgba(0, 0, 255, 0.06)); /* Rotated linear gradient */
     mix-blend-mode: color-dodge;
     z-index: 2;
     background-size: .3vw .3vh;
     pointer-events: none;
+    top: 0;
+left: 0;
+bottom: 0;
+right: 0;
   }
 
   @keyframes flicker {
@@ -238,4 +240,8 @@ p.subtitle {
 
   crt.crt2 {
     opacity: .3;
+    top: 0;
+left: 0;
+bottom: 0;
+right: 0;
   }
