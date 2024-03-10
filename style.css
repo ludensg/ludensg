@@ -33,7 +33,7 @@ body, html {
 margin: 0;
 padding: 0;
 font-family: 'helvlight', sans-serif;
-background-color: var(--color-light-grey);
+background-color: #cbcbca8c;
 box-sizing: border-box;
 }
 
@@ -57,7 +57,7 @@ margin: 0 auto; /* Center the container */
 
 h1 {
 font-size: calc(6px + 2vw);
-color: var(--color-accent);
+color: #53482fc5;
 font-family: 'helvbold', sans-serif;
 margin-left: -5px; 
 margin-bottom: 0; /* Adjust the space between title and subtitle */
@@ -65,17 +65,20 @@ transform: scaleX(1.2) scaleY(1.9);
 transform-origin: left; /* Align the transformation origin to the left */
 }
 
-p.subtitle {
-font-size: calc(4px + 1vw);
-color: var(--color-dark-grey);
-font-family: 'helvcomp', sans-serif;
-margin-top: 1px; /* No additional space above the subtitle */
-margin-left: 0px; 
-transform: scaleX(2.5) scaleY(1);
-transform-origin: left; /* Align the transformation origin to the left */
-letter-spacing: .01px;
-}
 
+p.subtitle {
+    font-size: calc(4px + 1vw);
+    color: #534f1675;
+    font-family: 'helvcomp', sans-serif;
+    margin-top: 1px;
+    margin-left: 0px; 
+    transform: scaleX(2.5) scaleY(1);
+    transform-origin: left;
+    letter-spacing: .01px;
+    position: relative; /* Needed for z-index stacking */
+    z-index: 2; /* Ensures the text appears above the pseudo-element */
+  }
+  
 .artist-statement {
 width: 69%;
 min-width: 300px; /*330px*/
@@ -83,7 +86,7 @@ margin: 1.5em 8%; /* Adjust top margin as needed, auto centers the element */
 font-size: .8em;
 line-height: 1.5;
 color: var(--color-reg-text);
-background-color: var(--color-off-white);
+background-color: rgba(189, 212, 219, 0.356);
 padding: 1em;
 padding-top: .5em;
 padding-bottom: .2em;
@@ -109,6 +112,8 @@ border-left: 2px solid var(--color-accent2);
     max-width: none; /* Allow the container to be full width */
     margin: 0; /* Remove auto margin */
     padding-left: 15px; /* Add some padding on the left */
+    position: relative; /* Ensures the pseudo-element is positioned relative to this container */
+    overflow: hidden;
     }
 
     h1 {
@@ -137,7 +142,7 @@ border-left: 2px solid var(--color-accent2);
     linear-gradient(90deg, rgba(121, 195, 255, 0.329), rgba(48, 153, 252, 0.527), rgba(0, 0, 255, 0.06)); /* Rotated linear gradient */
     mix-blend-mode: color-dodge;
     z-index: 2;
-    background-size: 100% 2px, 3px 100%;
+    background-size: 205% 3px, 2px 205%;
     pointer-events: none;
   }
 
