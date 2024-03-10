@@ -52,7 +52,7 @@ padding: 20px; /* Applies padding uniformly on all sides */
 padding-bottom: 100px; 
 padding-top: 0px;
 overflow: hidden;
-margin-top: -10px; 
+margin-top: 0px; 
 }
 
 .title-container {
@@ -84,21 +84,23 @@ p.subtitle {
     z-index: 2; /* Ensures the text appears above the pseudo-element */
   }
   
-.artist-statement {
-width: 69%;
-min-width: 300px; /*330px*/
-margin: 1.5em 8%; /* Adjust top margin as needed, auto centers the element */
-font-size: .8em;
-line-height: 1.5;
-color: var(--color-reg-text);
-background-color: rgba(189, 212, 219, 0.356);
-padding: 1em;
-padding-top: .5em;
-padding-bottom: .2em;
-text-align: justify;
-border-left: 2px solid var(--color-accent2);
-}
-
+  .artist-statement {
+    width: 69%;
+    min-width: 300px; /* Adjust if necessary */
+    margin: 1.5em 8%; /* Adjust top margin as needed, auto centers the element */
+    font-size: .8em;
+    line-height: 1.5;
+    color: var(--color-reg-text);
+    background-color: rgba(189, 212, 219, 0.356);
+    padding: 1em;
+    padding-top: .5em;
+    padding-bottom: .2em;
+    text-align: justify;
+    border-left: 2px solid var(--color-accent2);
+    max-height: 80vh; /* Example max-height, adjust based on your design */
+    overflow-y: auto; /* Enables vertical scrolling if content overflows */
+  }
+  
 
 /* Responsive styles for mobile devices */
 @media screen and (max-width: 768px), screen and (max-height: 800px) {
