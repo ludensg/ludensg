@@ -62,7 +62,7 @@ margin: 0 auto; /* Center the container */
 
 h1 {
 font-size: calc(6px + 2vw);
-color: #3d3522c5;
+color: #3d3522de;
 font-family: 'helvbold', sans-serif;
 margin-left: -5px; 
 margin-bottom: 0; /* Adjust the space between title and subtitle */
@@ -119,6 +119,7 @@ border-left: 2px solid var(--color-accent2);
     padding-left: 15px; /* Add some padding on the left */
     position: relative; /* Ensures the pseudo-element is positioned relative to this container */
     overflow: hidden;
+    z-index: 6;
     }
 
     h1 {
