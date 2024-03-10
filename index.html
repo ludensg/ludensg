@@ -4,189 +4,62 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ludens Gandelman</title>
-
-<style>
-    @font-face {
-        font-family: 'helvbold';
-        src: url('misc/fonts/Helvetica Bold Condensed.otf') format('opentype');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'helvcomp';
-        src: url('misc/fonts/Helvetica Ultra Compressed.otf') format('opentype');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'helvlight';
-        src: url('misc/fonts/Helvetica Light Regular.otf') format('opentype');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    :root {
-        --color-dark-grey: #777373;
-        --color-reg-text: #222222;
-        --color-light-grey: #CBCBCA;
-        --color-off-white: #DDDDDD;
-        --color-medium-grey: #919293;
-        --color-accent: #b31b30; 
-        --color-accent2: #6b6b6b; 
-    }
-
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'helvlight', sans-serif;
-    background-color: var(--color-light-grey);
-    box-sizing: border-box;
-  }
-
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-/* Base styles */
-.hero-text {
-  text-align: left;
-  padding: 20px; /* Applies padding uniformly on all sides */
-  padding-bottom: 100px; 
-  padding-top: 0px;
-  overflow: hidden;
-  margin-top: -10px; 
-}
-
-.title-container {
-  max-width: 600px; /* Match the artist statement width or set as desired */
-  margin: 0 auto; /* Center the container */
-}
-
-h1 {
-  font-size: calc(6px + 2vw);
-  color: var(--color-accent);
-  font-family: 'helvbold', sans-serif;
-  margin-left: -5px; 
-  margin-bottom: 0; /* Adjust the space between title and subtitle */
-  transform: scaleX(1.2) scaleY(1.9);
-  transform-origin: left; /* Align the transformation origin to the left */
-}
-
-p.subtitle {
-  font-size: calc(4px + 1vw);
-  color: var(--color-dark-grey);
-  font-family: 'helvcomp', sans-serif;
-  margin-top: 1px; /* No additional space above the subtitle */
-  margin-left: 0px; 
-  transform: scaleX(2.5) scaleY(1);
-  transform-origin: left; /* Align the transformation origin to the left */
-  letter-spacing: .01px;
-}
-
-.artist-statement {
-    width: 69%;
-    min-width: 300px; /*330px*/
-    margin: 1.5em 8%; /* Adjust top margin as needed, auto centers the element */
-    font-size: .8em;
-    line-height: 1.5;
-    color: var(--color-reg-text);
-    background-color: var(--color-off-white);
-    padding: 1em;
-    padding-top: .5em;
-    padding-bottom: .2em;
-    text-align: justify;
-    border-left: 2px solid var(--color-accent2);
-}
-
-
-/* Responsive styles for mobile devices */
-@media screen and (max-width: 768px), screen and (max-height: 800px) {
-    .artist-statement {
-        margin-top: 1vh; /* Less space on smaller screens */
-        font-size: .8em;
-    }
-
-  .hero-text {
-    padding-left: 10%; /* Less padding on the left for mobile */
-    padding-top: 10px; /* Adjust top padding for mobile */
-    padding-bottom: 0px; 
-  }
-
-  .title-container {
-    max-width: none; /* Allow the container to be full width */
-    margin: 0; /* Remove auto margin */
-    padding-left: 15px; /* Add some padding on the left */
-  }
-
-  h1 {
-    font-size: calc(15px + 3vw); /* Increase minimum font size for mobile */
-    transform: scaleX(1.2) scaleY(1.9);
-    transform-origin: left; /* Align the transformation origin to the left */
-  }
-
-  p.subtitle {
-    font-size: calc(6.5px + 1.17vw); /* Increase minimum font size for mobile */
-    transform: scaleX(2.5) scaleY(1);
-    transform-origin: left; /* Align the transformation origin to the left */
-  }
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 
-
-<div class="hero-text">
-    <div class="title-container">
-        <h1>DANIEL GANDELMAN</h1>
-        <p class="subtitle">artist &nbsp; computer scientist  &nbsp; homo ludens</p>
-    </div>
+<div class="crt">
+  <div class="hero-text">
+      <div class="title-container">
+          <h1>DANIEL GANDELMAN</h1>
+          <p class="subtitle">artist &nbsp; computer scientist  &nbsp; homo ludens</p>
+      </div>
+  </div>
+        
+  <!-- daniel gandelman is an artist who has been forced to write a 
+  statement in the third person because that's what he saw everyone else doing -->
 </div>
-      
-<!-- daniel gandelman is an artist who has been forced to write a 
-statement in the third person because that's what he saw everyone else doing -->
 <div class="artist-statement">
-    <p>
-        &nbsp; &nbsp; As an artist focusing on the act of creation
-         as revealed by its own outcomes, Daniel Gandelman <i>(a.k.a. Ludens)</i> is an <strong>intermedia + transmedia artist</strong> that primarily 
-         engages in <strong>painting, drawing, sculpture</strong> and <strong>installation</strong>, as well as film and digital design, but ultimately deals in <i>games</i>
-         as a medium for bridging the gaps between extended forms of performance and object-centered art.
-        </br> </br>    
-        &nbsp; &nbsp; Displaced by both the Venezuelan crisis and the recent pandemic, 
-        Gandelman's work is deeply invested in the <strong>construction of contexts for community</strong> in a 
-        changing world. A world in which the concept of a geographical border has a progressively diminishing influence on culture.
+  <p>
+      &nbsp; &nbsp; As an artist focusing on the act of creation
+      as revealed by its own outcomes, Daniel Gandelman <i>(a.k.a. Ludens)</i> is an <strong>intermedia + transmedia artist</strong> that primarily 
+      engages in <strong>painting, drawing, sculpture</strong> and <strong>installation</strong>, as well as film and new-media, but ultimately deals in <i>games</i>
+      as a medium for bridging the gaps between extended forms of performance and object-centered art.
+      </br> </br>    
+      &nbsp; &nbsp; Displaced by both the Venezuelan crisis and the recent pandemic, 
+      Gandelman's work is deeply invested in the <strong>construction of contexts for community</strong> in a 
+      changing world. A world in which the concept of a geographical border has a progressively diminishing influence on culture.
 </br>
 &nbsp; &nbsp; In this sense, he employs a perspective in which art history is intimately and immediately <strong>participatory</strong>.
 That is, instead of seeing it as a field based upon mere investigation in hindsight, his approach understands
 art history as a willful construction, and as a constant current of malleable experience.
-        For these purposes, his work delves into what he terms <i>the mechanics of art</i>, 
-        an examination of the reciprocal relationship between the ephemerality of performance, collective memory,
-         and the permanence of physical objects. Through interactions with these <strong>structures of scarcity</strong>, 
-         Gandelman takes a pulse on our connection to immortalized versions of past transient moments,
-        and, by extension, pursues both an assembling of the present and a nudging of the future.  </br> </br>
+      For these purposes, his work delves into what he terms <i>the mechanics of art</i>, 
+      an examination of the reciprocal relationship between the ephemerality of performance, collective memory,
+      and the permanence of physical objects. Through interactions with these <strong>structures of scarcity</strong>, 
+      Gandelman takes a pulse on our connection to immortalized versions of past transient moments,
+      and, by extension, pursues both an assembling of the present and a nudging of the future.  </br> </br>
 
-        &nbsp; &nbsp; Situating his art within the context of <strong>unfolding narratives</strong> (as opposed to singular isolated moments), 
-        and contributing to the exploration of themes of <strong>meaning, belonging, and the momentum of life in the context of shared human ecologies</strong>,
-         recurring techniques in Gandelman's practice include; intra- and intertextuality, agency, and
-        the synthesis of unrelated concepts through <strong>syncretism</strong>. Also influenced by the broad
-        ideas of Complexity Science (emergence, adaptive systems, and complex
-          structures), a <strong>background as a Computer Science researcher</strong>
-        further informs his work with the introduction of <strong>algorithmic, computational and mathematical thinking, </strong>
-           incorporating ideas such as <strong> networks, recursion,</strong> and <strong>infinity.</strong>  </br> </br>
+      &nbsp; &nbsp; Situating his art within the context of <strong>unfolding narratives</strong> (as opposed to singular isolated moments), 
+      and contributing to the exploration of themes of <strong>meaning, belonging, and the momentum of life in the context of shared human ecologies</strong>,
+      recurring techniques in Gandelman's practice include; intra- and intertextuality, agency, and
+      the synthesis of unrelated concepts through <strong>syncretism</strong>. Also influenced by the broad
+      ideas of Complexity Science (emergence, adaptive systems, and complex
+        structures), a <strong>background as a Computer Science researcher</strong>
+      further informs his work with the introduction of <strong>algorithmic, computational and mathematical thinking, </strong>
+        incorporating ideas such as <strong> networks, recursion,</strong> and <strong>infinity.</strong>  </br> </br>
 
-           &nbsp; &nbsp; Gandelman's artistic actions advocate for self-sublimation, 
-        aiming to expand the reach of art practice into the deepest corners of 
-        private life through creative behavior, experimentation, and unorthodox 
-        decision-making. His work's ultimate goal is to engage in an expansion of
-        the reach of traditional artistic spaces into unexpected areas, with an aspiration of
-        imbuing the deeply ordinary with creative potentials of expression as inherited from artistic traditions. 
-    </br> </br>
-    &nbsp; &nbsp; He is currently bi-located in <strong>Miami</strong> and <strong>Tallahassee, FL</strong>.
-    </p>
+        &nbsp; &nbsp; Gandelman's artistic actions advocate for self-sublimation, 
+      aiming to expand the reach of art practice into the deepest corners of 
+      private life through creative behavior, experimentation, and unorthodox 
+      decision-making. His work's ultimate goal is to engage in an expansion of
+      the reach of traditional artistic spaces into unexpected areas, with an aspiration of
+      imbuing the deeply ordinary with creative potentials of expression as inherited from artistic traditions. 
+  </br> </br>
+  &nbsp; &nbsp; He is currently bi-located in <strong>Miami</strong> and <strong>Tallahassee, FL</strong>.
+  </p>
 </div>
-<script type="module" src="/main.js"></script>
+<script type="module" src="/lcd.js"></script>
 </body>
 </html>
 

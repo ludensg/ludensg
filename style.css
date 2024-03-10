@@ -1,0 +1,224 @@
+@font-face {
+    font-family: 'helvbold';
+    src: url('misc/fonts/Helvetica Bold Condensed.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helvcomp';
+    src: url('misc/fonts/Helvetica Ultra Compressed.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helvlight';
+    src: url('misc/fonts/Helvetica Light Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --color-dark-grey: #777373;
+    --color-reg-text: #222222;
+    --color-light-grey: #CBCBCA;
+    --color-off-white: #DDDDDD;
+    --color-medium-grey: #919293;
+    --color-accent: #b31b30; 
+    --color-accent2: #6b6b6b; 
+}
+
+body, html {
+margin: 0;
+padding: 0;
+font-family: 'helvlight', sans-serif;
+background-color: var(--color-light-grey);
+box-sizing: border-box;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+/* Base styles */
+.hero-text {
+text-align: left;
+padding: 20px; /* Applies padding uniformly on all sides */
+padding-bottom: 100px; 
+padding-top: 0px;
+overflow: hidden;
+margin-top: -10px; 
+}
+
+.title-container {
+max-width: 600px; /* Match the artist statement width or set as desired */
+margin: 0 auto; /* Center the container */
+}
+
+h1 {
+font-size: calc(6px + 2vw);
+color: var(--color-accent);
+font-family: 'helvbold', sans-serif;
+margin-left: -5px; 
+margin-bottom: 0; /* Adjust the space between title and subtitle */
+transform: scaleX(1.2) scaleY(1.9);
+transform-origin: left; /* Align the transformation origin to the left */
+}
+
+p.subtitle {
+font-size: calc(4px + 1vw);
+color: var(--color-dark-grey);
+font-family: 'helvcomp', sans-serif;
+margin-top: 1px; /* No additional space above the subtitle */
+margin-left: 0px; 
+transform: scaleX(2.5) scaleY(1);
+transform-origin: left; /* Align the transformation origin to the left */
+letter-spacing: .01px;
+}
+
+.artist-statement {
+width: 69%;
+min-width: 300px; /*330px*/
+margin: 1.5em 8%; /* Adjust top margin as needed, auto centers the element */
+font-size: .8em;
+line-height: 1.5;
+color: var(--color-reg-text);
+background-color: var(--color-off-white);
+padding: 1em;
+padding-top: .5em;
+padding-bottom: .2em;
+text-align: justify;
+border-left: 2px solid var(--color-accent2);
+}
+
+
+/* Responsive styles for mobile devices */
+@media screen and (max-width: 768px), screen and (max-height: 800px) {
+    .artist-statement {
+        margin-top: 1vh; /* Less space on smaller screens */
+        font-size: .8em;
+    }
+
+    .hero-text {
+    padding-left: 10%; /* Less padding on the left for mobile */
+    padding-top: 10px; /* Adjust top padding for mobile */
+    padding-bottom: 0px; 
+    }
+
+    .title-container {
+    max-width: none; /* Allow the container to be full width */
+    margin: 0; /* Remove auto margin */
+    padding-left: 15px; /* Add some padding on the left */
+    }
+
+    h1 {
+    font-size: calc(15px + 3vw); /* Increase minimum font size for mobile */
+    transform: scaleX(1.2) scaleY(1.9);
+    transform-origin: left; /* Align the transformation origin to the left */
+    }
+
+    p.subtitle {
+    font-size: calc(6.5px + 1.17vw); /* Increase minimum font size for mobile */
+    transform: scaleX(2.5) scaleY(1);
+    transform-origin: left; /* Align the transformation origin to the left */
+    }
+}
+
+.crt::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: 
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), /* Original linear gradient */
+    linear-gradient(90deg, rgba(121, 195, 255, 0.329), rgba(48, 153, 252, 0.527), rgba(0, 0, 255, 0.06)); /* Rotated linear gradient */
+    mix-blend-mode: color-dodge;
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+  }
+
+  @keyframes flicker {
+    0% {
+        opacity: 0.85;
+    }
+    5% {
+        opacity: 0.95;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    15% {
+        opacity: 0.98;
+    }
+    20% {
+        opacity: 0.75;
+    }
+    25% {
+        opacity: 0.92;
+    }
+    30% {
+        opacity: 0.78;
+    }
+    35% {
+        opacity: 0.92;
+    }
+    40% {
+        opacity: 0.8;
+    }
+    45% {
+        opacity: 0.94;
+    }
+    50% {
+        opacity: 0.9;
+    }
+    55% {
+        opacity: 0.75;
+    }
+    60% {
+        opacity: 0.85;
+    }
+    65% {
+        opacity: 0.92;
+    }
+    70% {
+        opacity: 0.85;
+    }
+    75% {
+        opacity: 0.88;
+    }
+    80% {
+        opacity: 0.9;
+    }
+    85% {
+        opacity: 0.92;
+    }
+    90% {
+        opacity: 0.85;
+    }
+    95% {
+        opacity: 0.9;
+    }
+    100% {
+        opacity: 0.88;
+    }
+}
+
+  
+  .crt::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+  }
