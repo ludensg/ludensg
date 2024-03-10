@@ -62,7 +62,7 @@ margin: 0 auto; /* Center the container */
 
 h1 {
 font-size: calc(6px + 2vw);
-color: #53482fc5;
+color: #3d3522c5;
 font-family: 'helvbold', sans-serif;
 margin-left: -5px; 
 margin-bottom: 0; /* Adjust the space between title and subtitle */
@@ -147,7 +147,7 @@ border-left: 2px solid var(--color-accent2);
     linear-gradient(90deg, rgba(121, 195, 255, 0.329), rgba(48, 153, 252, 0.527), rgba(0, 0, 255, 0.06)); /* Rotated linear gradient */
     mix-blend-mode: color-dodge;
     z-index: 2;
-    background-size: 305% 3px, 2px 405%;
+    background-size: .3vw .3vh;
     pointer-events: none;
   }
 
