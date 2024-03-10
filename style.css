@@ -35,6 +35,11 @@ padding: 0;
 font-family: 'helvlight', sans-serif;
 background-color: #cbcbca8c;
 box-sizing: border-box;
+position: relative;
+top: 0;
+left: 0;
+bottom: 0;
+right: 0;
 }
 
 *, *:before, *:after {
@@ -142,7 +147,7 @@ border-left: 2px solid var(--color-accent2);
     linear-gradient(90deg, rgba(121, 195, 255, 0.329), rgba(48, 153, 252, 0.527), rgba(0, 0, 255, 0.06)); /* Rotated linear gradient */
     mix-blend-mode: color-dodge;
     z-index: 2;
-    background-size: 205% 3px, 2px 205%;
+    background-size: 305% 3px, 2px 405%;
     pointer-events: none;
   }
 
