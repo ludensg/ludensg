@@ -4,63 +4,135 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ludens Gandelman</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="crt2">
+<body style="overflow-x: hidden; overflow-y: hidden;">
+  <div class="crt2" style="z-index: 8">
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 
 
-<div class="crt">
-  <div class="hero-text">
-      <div class="title-container">
-          <h1 style="z-index: 5;">DANIEL GANDELMAN</h1>
+<div class="crt" style="z-index: 8">
+  <div class="hero-text" id="hero-text">
+      <div class="title-container" style="z-index: 1;">
+          <h1> <nobr> DANIEL GANDELMAN </nobr> </h1>
           <p class="subtitle"><span>&nbsp;artist/computer scientist/homo ludens</span></p>
+          <div class="buttons" id="mainbuttons" 
+          style="align-items: stretch; margin-top: -10px; transform: scale(1); padding-top: 15px;
+          transition: margin-top ease 0.5s; transition: transform ease 0.5s; transition: align-items ease 0.5s;
+          transition: background-color ease 0.5s;
+          padding-bottom: -5px;
+          background-color: rgba(131, 116, 83, 0.247);">
+            <button id="artist-statement-btn";>Artist Statement</button>
+            <button id="portfolio-btn">Portfolio</button>
+            <button id="coverage-btn";>Coverage</button>
+            <button id="contact-btn">Contact</button>
+        </div>
       </div>
   </div>
         
   <!-- daniel gandelman is an artist who has been forced to write a 
   statement in the third person because that's what he saw everyone else doing -->
-</div>
-<div class="artist-statement" style="z-index: 200;">
-  <p>
-      &nbsp; &nbsp; As an artist focusing on the act of creation
-      as revealed by its own outcomes, Daniel Gandelman <i>(a.k.a. Ludens)</i> is an <strong>intermedia + transmedia artist</strong> that primarily 
-      engages in <strong>painting, drawing, sculpture</strong> and <strong>installation</strong>, <strong>conceptual art</strong>, as well as film and new-media, but ultimately deals in  <i>games</i>
-      as a medium for bridging the gaps between extended forms of performance and object-centered art.
-      </br> </br>    
-      &nbsp; &nbsp; Displaced by both the Venezuelan crisis and the recent pandemic, 
-      Gandelman's work is deeply invested in the <strong>construction of contexts for community</strong> in a 
-      changing world. A world in which the concept of a geographical border has a progressively diminishing influence on culture.
-</br>
-&nbsp; &nbsp; In this sense, he employs a perspective in which art history is intimately and immediately <strong>participatory</strong>.
-That is, instead of seeing it as a field based upon mere investigation in hindsight, his approach understands
-art history as a willful construction, and as a constant current of malleable experience.
-      For these purposes, his work delves into what he terms <i>the mechanics of art</i>, 
-      an examination of the reciprocal relationship between the ephemerality of performance, collective memory,
-      and the permanence of physical objects. Through interactions with these <strong>structures of scarcity</strong>, 
-      Gandelman takes a pulse on our connection to immortalized versions of past transient moments,
-      and, by extension, pursues both an assembling of the present and a nudging of the future.  </br> </br>
 
-      &nbsp; &nbsp; Situating his art within the context of <strong>unfolding narratives</strong> (as opposed to singular isolated moments), 
-      and contributing to the exploration of themes of <strong>meaning, belonging, and the momentum of life in the context of shared human ecologies</strong>,
-      recurring techniques in Gandelman's practice include; intra- and intertextuality, agency, and
-      the synthesis of unrelated concepts through <strong>syncretism</strong>. Also influenced by the broad
-      ideas of Complexity Science (emergence, adaptive systems, and complex
-        structures), a <strong>background as a Computer Science researcher</strong>
-      further informs his work with the introduction of <strong>algorithmic, computational and mathematical thinking, </strong>
-        incorporating ideas such as <strong> networks, recursion,</strong> and <strong>infinity.</strong>  </br> </br>
 
-        &nbsp; &nbsp; Gandelman's artistic actions advocate for self-sublimation, 
-      aiming to expand the reach of art practice into the deepest corners of 
-      private life through creative behavior, experimentation, and unorthodox 
-      decision-making. His work's ultimate goal is to engage in an expansion of
-      the reach of traditional artistic spaces into unexpected areas, with an aspiration of
-      imbuing the deeply ordinary with creative potentials of expression as inherited from artistic traditions. 
-  </br> </br>
-  &nbsp; &nbsp; He is currently bi-located in <strong>Miami</strong> and <strong>Tallahassee, FL</strong>.
-  </p>
+<div id="artist-statement-container" class="content-container" style="z-index: 1">
+  <div class="back-btn">
+    <span><small> <small> <small> <small> v v v</small></small></small></small> </span>&nbsp;&nbsp; Return &nbsp;&nbsp;<span><small> <small> <small><small> v v v</small></small></small></small> </span>
 </div>
+
+<div class="bannersupport"></div>
+<div class="banner">
+Artist Satement </div>
+  <div class="artist-statement">
+    <p>
+        &nbsp; &nbsp; As an artist focusing on the act of creation
+        as revealed by its own outcomes, Daniel Gandelman <i>(a.k.a. Ludens)</i> is an <strong>intermedia + transmedia artist</strong> that primarily 
+        engages in <strong>painting, drawing, sculpture</strong> and <strong>installation</strong>, <strong>conceptual art</strong>, as well as film and new-media, but ultimately deals in  <i>games</i>
+        as a medium for bridging the gaps between extended forms of performance and object-centered art.
+        </br> </br>    
+        &nbsp; &nbsp; Displaced by both the Venezuelan crisis and the recent pandemic, 
+        Gandelman (and by extension his work) is deeply invested in the <strong>construction of contexts for community</strong> in a 
+        changing world. A world in which the concept of a geographical border has a progressively diminishing influence on culture.
+  </br>
+  &nbsp; &nbsp; In this sense, he employs a perspective in which art history is intimately and immediately <strong>participatory</strong>.
+  That is, instead of seeing it as a field based upon mere investigation in hindsight, his approach understands
+  art history as a willful construction, and as a constant current of malleable experience.
+        For these purposes, his work delves into what he terms <i>the mechanics of art</i>, 
+        an examination of the reciprocal relationship between the ephemerality of performance, collective memory,
+        and the permanence of physical objects. Through interactions with these <strong>structures of scarcity</strong>, 
+        Gandelman takes a pulse on our connection to immortalized versions of past transient moments,
+        and, by extension, pursues both an assembling of the present and a nudging of the future.  </br> </br>
+
+        &nbsp; &nbsp; Situating his art within the context of <strong>unfolding narratives</strong> (as opposed to singular isolated moments), 
+        and contributing to the exploration of themes of <strong>meaning, belonging, and the momentum of life in the context of shared human ecologies</strong>,
+        recurring techniques in Gandelman's practice include; intra- and intertextuality, agency, and
+        the synthesis of unrelated concepts through <strong>syncretism</strong>. Also influenced by the broad
+        ideas of Complexity Science (emergence, adaptive systems, and complex
+          structures), a <strong>background as a Computer Science researcher</strong>
+        further informs his work with the introduction of <strong>algorithmic, computational and mathematical thinking, </strong>
+          incorporating ideas such as <strong> networks, recursion,</strong> and <strong>infinity.</strong>  </br> </br>
+
+          &nbsp; &nbsp; Gandelman's artistic actions advocate for self-sublimation, 
+        aiming to expand the reach of art practice into the deepest corners of 
+        private life through creative behavior, experimentation, and unorthodox 
+        decision-making. His work's ultimate goal is to engage in an expansion of
+        the reach of traditional artistic spaces into unexpected areas, with an aspiration of
+        imbuing the deeply ordinary with creative potentials of expression as inherited from artistic traditions. 
+    </br> </br>
+    &nbsp; &nbsp; &nbsp; &nbsp;He is currently bi-located in <strong>Miami</strong> and <strong>Tallahassee, FL</strong>. </p>
+  </div>
+</div>
+
+<div id="portfolio-container" class="content-container">
+  <div class="back-btn">
+    <span><small> <small> <small> <small> v v v</small></small></small></small> </span>&nbsp;&nbsp; Return &nbsp;&nbsp;<span><small> <small> <small><small> v v v</small></small></small></small> </span>
+</div>
+
+<div class="bannersupport"></div>
+<div class="banner">
+Portfolio </div>
+  <div class="artist-statement">
+
+
+
+</div>
+</div>
+
+<div id="coverage-container" class="content-container">
+  <div class="back-btn">
+    <span><small> <small> <small> <small> v v v</small></small></small></small> </span>&nbsp;&nbsp; Return &nbsp;&nbsp;<span><small> <small> <small><small> v v v</small></small></small></small> </span>
+</div>
+
+<div class="bannersupport"></div>
+<div class="banner">
+Coverage </div>
+  <div class="artist-statement">
+    
+
+
+</div>
+</div>
+
+
+<div id="contact-container" class="content-container">
+  <div class="back-btn">
+    <span><small> <small> <small> <small> v v v</small></small></small></small> </span>&nbsp;&nbsp; Return &nbsp;&nbsp;<span><small> <small> <small><small> v v v</small></small></small></small> </span>
+</div>
+
+<div class="bannersupport"></div>
+<div class="banner">
+Contact </div>
+  <div class="artist-statement">
+    
+
+
+</div>
+</div>
+
+</div>
+
 <script type="module" src="/screen.js"></script>
+<script type="module" src="/interaction.js"></script>
+</div>
 </body>
 </html>
 

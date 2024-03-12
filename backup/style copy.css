@@ -98,6 +98,36 @@ p.subtitle {
     max-height: 80vh; /* Example max-height, adjust based on your design */
     overflow-y: auto; /* Enables vertical scrolling if content overflows */
   }
+
+  .buttons button {
+    /* Nintendo DS PictoChat UI inspired button styles */
+    background: #e0e0e0; /* Light grey */
+    border: 2px solid #000; /* Black border */
+    border-radius: 5px;
+    font-family: 'helvlight', sans-serif;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buttons button:hover {
+    background-color: #ccc; /* Darker grey on hover */
+  }
+  
+  .content-container {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Start off-screen */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 12, 12, 0.562); /* Semi-transparent white */
+    overflow-y: auto; /* Enable scrolling within the container */
+    transition: left 0.5s ease; /* Smooth transition for sliding effect */
+    z-index: 2; /* Ensure it's above other content */
+    padding: 20px;
+  }
+  
   
 
 /* Responsive styles for mobile devices */
