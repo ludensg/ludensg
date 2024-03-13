@@ -502,11 +502,11 @@ position: fixed;
     color: rgba(94, 60, 2, 0.596);
     transform: scale(1.1); /* Slightly increase size */
   }
-  
+
 
   .gallery-item {
+    text-align: left;
     width: 150px; /* Adjust based on your layout needs */
-    text-align: center;
     margin-bottom: 20px;
     transition: transform 0.3s ease; /* Smooth transition for scaling */
     display: inline-block; /* Necessary for transform */
@@ -524,7 +524,8 @@ position: fixed;
 
 .gallery-item:hover {
     transform: scale(1.05); /* Scale up the item */
-    z-index: 1; /* Ensure the item is above others when scaled */
+    z-index: 29; /* Ensure the item is above others when scaled */
+    cursor: grab;
 }
 
 .gallery-item img {
@@ -534,12 +535,14 @@ position: fixed;
 }
 
 .gallery-item-title {
+    text-align: left;
     font-family: monospace;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 .gallery-item-caption {
+    text-align: left;
     font-family: monospace;
     margin-bottom: 5px;
     font-size: 0.8em; /* Smaller text for the caption */
@@ -560,66 +563,69 @@ position: fixed;
 /* SUBGALLERIES */
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 2; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow-y: scroll; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  .modal-content {
-    display: flex; /* Use flexbox for layout */
-    background-color: #35290785;
-    color:#d3a973;
-    font-family: monospace;
-    margin: 10% auto; /* Adjusted for demonstration */
-    padding: 20px;
-    border: 1px solid #c8d456c0;
-    width: 80%; /* Could be more or less, depending on screen size */
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Optional: Adds shadow for depth */
-  }
-  
-  .close {
-    color: #f3db55;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  
-  .slideshow-container {
-    width: 50vh; 
-    height: 50vh;
-    padding: 10px; /* Adds some spacing inside the container */
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 9; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow-y: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  position: relative;
+  background-color: #35290785;
+  color: #d3a973;
+  font-family: monospace;
+  margin: 5% auto; /* 5% top and bottom margin */
+  padding: 20px;
+  border: 1px solid #c8d456c0;
+  width: 80%; /* Responsive width */
+  max-width: 800px; /* Maximum width to prevent overly wide modals */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  display: flex;
+  flex-wrap: wrap; /* Allow elements to wrap as needed */
+  align-items: center; /* Align items vertically */
+  justify-content: center; /* Center items horizontally */
+}
+
+.close {
+  color: #f3db55;
+  position: fixed; /* Position absolutely within the nearest positioned ancestor */
+  top: 10%; /* Adjust as needed for exact positioning */
+  right: 15%; /* Adjust as needed for exact positioning */
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 22;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+.slideshow-container {
+    flex: 1 1 90vh; /* Flex basis of 50vh, but allow shrinking and growing */
+    min-height: 70vh;
+    max-width: 100vh; /* Maximum width to maintain aspect ratio */
     position: relative;
-    overflow: hidden; /* Ensures that nothing extends beyond the container bounds */
-    display: flex; /* Utilizes Flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    margin: 10px; /* Add some space around the container */
 }
 
 .slide-image {
-    max-width: 100%; /* Ensures image does not exceed the container's width */
-    max-height: 100%; /* Ensures image does not exceed the container's height */
-    object-fit: contain; /* Ensures the image's aspect ratio is maintained */
-    position: absolute; /* Positions image absolutely within the relative container */
-    top: 0; /* Aligns image top to container top */
-    left: 0; /* Aligns image left to container left */
-    width: auto; /* Allows image width to adjust based on its height and aspect ratio */
-    height: auto; /* Allows image height to adjust based on its width and aspect ratio */
-    transition: opacity 2s ease-in-out; /* Smooth transition for crossfade effect */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Maintain aspect ratio without cropping */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the image */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition for crossfade effect */
 }
+
 
   .slideshow-container img {
     max-width: 100%; /* Makes images responsive to the container size */
@@ -628,16 +634,18 @@ position: fixed;
     margin: 0 auto; /* Center images if they don't fill the container */
   }
   
-  .modal-info {
-    width: 66.666%; /* Right two-thirds of the modal */
-    padding: 10px; /* Optional: Adds some spacing */
-    display: flex;
-    flex-direction: column; /* Stack info vertically */
-  }
+.modal-info {
+  flex: 1 1 50%; /* Take up half of the modal content space */
+  padding: 20px; /* Add some padding around the text */
+  display: flex;
+  flex-direction: column;
+  max-width: 50%; /* Limit width to half of the modal content */
+  background-color: #292003a8;
+}
 
-  .modal-title, .modal-description, .thumbnail-container {
-    margin-bottom: 10px; /* Add some space between info elements */
-  }
+.modal-title, .modal-description {
+  margin-bottom: 20px; /* Add more space between title/description and any other content */
+}
 
   .thumbnail-container {
     display: flex;

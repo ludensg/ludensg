@@ -11,7 +11,7 @@ const galleryData = [
       "painting",
       "acrylic"
     ],
-    "date": "February, 2024"
+    "date": "January 18, 2024"
   },
   {
     "id": 2,
@@ -58,7 +58,7 @@ const galleryData = [
       "acrylic",
       "performance"
     ],
-    "date": "August, 2024"
+    "date": "August, 2023"
   },
   {
     "id": 5,
@@ -76,7 +76,7 @@ const galleryData = [
       "decollage",
       "assemblage"
     ],
-    "date": "February, 2024"
+    "date": "February 14, 2024"
   },
   {
     "id": 6,
@@ -95,7 +95,7 @@ const galleryData = [
       "tape art",
       "mural"
     ],
-    "date": "April, 2023"
+    "date": "May, 2018"
   },
   {
     "id": 7,
@@ -109,7 +109,7 @@ const galleryData = [
       "painting",
       "acrylic"
     ],
-    "date": "February, 2024"
+    "date": "February 18, 2024"
   },
   {
     "id": 8,
@@ -123,7 +123,7 @@ const galleryData = [
       "painting",
       "acrylic"
     ],
-    "date": "February, 2024"
+    "date": "January 15, 2024"
   }
 ];
 export { galleryData };

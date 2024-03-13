@@ -32,6 +32,7 @@ function showContentDesktop(containerId) {
     adjustElementDesktop(heroText, 'translateY(-40%) scale(0.5)', 'rgba(231, 216, 182, 0.685)');
     adjustElementDesktop(mainbuttons, 'scale(1.4)', '-20px', 'rgba(199, 175, 124, 0.514)');
     displayContent(containerId, 'translateY(-135%)');
+    disableScrolling();
 }
 
 function showContentMobile(containerId) {

@@ -1,6 +1,11 @@
 import { galleryData } from './galleryData.js';
 
+
 document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('crt1modal').style.display = 'none';
+    document.getElementById('sortAscBtn').addEventListener('click', () => sortGalleryByDate(true));
+    document.getElementById('sortDescBtn').addEventListener('click', () => sortGalleryByDate(false));
+
     const galleryContainer = document.querySelector('.gallery');
     const tagsFilterContainer = document.querySelector('.tags-filter');
     let selectedTags = [];
@@ -39,34 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // Within DOMContentLoaded event
     // Populate gallery initially
-    updateGalleryDisplay();
+    updateGalleryDisplay();    
     attachClickListenersToGalleryItems();
-    
-    
 
-    function attachClickListenersToGalleryItems() {
-        document.querySelectorAll('.gallery-item').forEach(item => {
-            item.addEventListener('click', function() {
-                // Assuming you have a function to handle opening the modal
-                openModalWithItemDetails(this);
-            });
-        });
-    }    
-
-    function openModalWithItemDetails(itemElement) {
-        const itemId = itemElement.getAttribute('data-id');
-        // Convert itemId to the correct type if necessary
-        const itemDetails = galleryData.find(item => item.id.toString() === itemId);
-    
-        if (itemDetails) {
-            populateModal(itemDetails);
-            openModal();
-        } else {
-            console.error('Item details not found for id:', itemId);
-        }
-    }
-    
-    
 
     // Function to update gallery display based on selected tags
     function updateGalleryDisplay() {
@@ -77,8 +57,55 @@ document.addEventListener('DOMContentLoaded', () => {
                 galleryContainer.appendChild(galleryItemElement);
             }
         });
+        //console.log('Gallery updated. Now attaching click listeners...');
+        attachClickListenersToGalleryItems();
     }
 
+    function attachClickListenersToGalleryItems() {
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.removeEventListener('click', galleryItemClickHandler); // Remove if previously added
+            item.addEventListener('click', galleryItemClickHandler);
+        });
+    }
+    
+    function galleryItemClickHandler() {
+        const itemId = this.getAttribute('data-id');
+        const galleryItem = galleryData.find(item => item.id.toString() === itemId);
+        if (galleryItem) {
+            populateModal(galleryItem); // Assume this function is correctly defined elsewhere
+            openModalWithItemDetails(galleryItem); // Now directly passing the item details
+        } else {
+            console.error('Item details not found for id:', itemId);
+        }
+    }
+    
+
+    function sortGalleryByDate(ascending = true) {
+        galleryData.sort((a, b) => {
+            const dateA = parseDate(a.date);
+            const dateB = parseDate(b.date);
+    
+            if (dateA && dateB) {
+                return ascending ? dateA - dateB : dateB - dateA;
+            }
+            return 0; // Fallback or consider as equal if one date cannot be parsed
+        });
+    
+        updateGalleryDisplay(); // Refresh gallery display based on the sorted galleryData
+        attachClickListenersToGalleryItems(); // Reattach click listeners to the new gallery items
+    }
+    
+
+    // Adjusted to use the item details passed to it
+    function openModalWithItemDetails(itemDetails) {
+        // Directly use itemDetails without needing to find it again
+        populateModal(itemDetails); // Populate modal with item details
+        openModal(); // Assume this function opens the modal as intended
+    }
+    
+    // Ensure populateModal and openModal are correctly defined to handle the data and UI updates
+    
+    
     // Extract and deduplicate tags
     const allTags = galleryData.flatMap(item => item.tags);
     const uniqueTags = [...new Set(allTags)];
@@ -99,7 +126,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         tagsFilterContainer.appendChild(button);
     });
-    
+    attachClickListenersToGalleryItems(); // Reattach click listeners to the new gallery items
+
 });
 
 
@@ -115,6 +143,8 @@ document.querySelectorAll('.gallery-item').forEach(item => {
   });
   
     function populateModal(item) {
+        //console.log('Populating modal with:', item);
+
         const modalTitle = document.getElementById('modalTitle');
         const modalSubtitle = document.getElementById('modalSubtitle');
         const modalDate = document.getElementById('modalDate');
@@ -153,6 +183,8 @@ document.querySelectorAll('.gallery-item').forEach(item => {
             // Append the image to the anchor, and then append the anchor to the slideshow container
             imageLink.appendChild(img);
             slideshowContainer.appendChild(imageLink);
+
+            slides.push(img); 
         });
 
 
@@ -171,10 +203,15 @@ document.querySelectorAll('.gallery-item').forEach(item => {
 
             // Function to navigate through images with crossfade effect
             function showSlide(nextIndex) {
+                if(slides.length === 0) {
+                    console.error('No slides found');
+                    return; // Guard clause to handle no slides scenario
+                }
                 slides[currentSlideIndex].style.opacity = '0'; // Fade out current image
                 currentSlideIndex = (nextIndex + slides.length) % slides.length; // Calculate the correct index
                 slides[currentSlideIndex].style.opacity = '1'; // Fade in next image
             }
+            
 
             leftArrow.addEventListener('click', () => showSlide(currentSlideIndex - 1));
             rightArrow.addEventListener('click', () => showSlide(currentSlideIndex + 1));
@@ -184,14 +221,47 @@ document.querySelectorAll('.gallery-item').forEach(item => {
   
   
   function openModal() {
+    //console.log('Opening modal...');
+    document.getElementById('crt1modal').style.display = 'block';
+    document.getElementById('gallery-container').style.display = 'block';
     document.getElementById('galleryModal').style.display = 'block';
+    document.getElementById('galleryModal').style.zIndex = '9';
+
+
   }
   
   function closeModal() {
-    document.getElementById('galleryModal').style.display = 'none';
+    document.getElementById('gallery-container').style.display = 'none';
   }
   
   document.querySelector('.close').addEventListener('click', function() {
     closeModal();
   });
   
+  function parseDate(dateStr) {
+    let parsedDate = new Date(dateStr);
+    if (!isNaN(parsedDate.getTime())) {
+        return parsedDate;
+    }
+
+    if (dateStr.includes('-')) {
+        const parts = dateStr.split('-');
+        let year = parseInt(parts[2], 10);
+        year = year < 100 ? year + 2000 : year;
+        parsedDate = new Date(year, parseInt(parts[0], 10) - 1, parseInt(parts[1], 10));
+    } else if (dateStr.match(/, \d{4}/)) {
+        // Handles both "Month day, year" with optional ordinal day suffix and "Month, year"
+        let parts = dateStr.match(/(\w+)\s(\d+)[a-z]*,\s(\d+)/);
+        if (!parts) {
+            // If no day is specified, default to the first of the month
+            parts = dateStr.match(/(\w+),\s(\d+)/);
+            if (parts && parts.length === 3) {
+                parsedDate = new Date(`${parts[1]} 1, ${parts[2]}`);
+            }
+        } else if (parts.length === 4) {
+            parsedDate = new Date(`${parts[1]} ${parts[2]}, ${parts[3]}`);
+        }
+    }
+
+    return !isNaN(parsedDate.getTime()) ? parsedDate : null;
+}

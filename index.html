@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv='cache-control' content='no-cache'> 
-<meta http-equiv='expires' content='0'> 
-<meta http-equiv='pragma' content='no-cache'>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
 <title>Ludens Gandelman</title>
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -15,6 +15,7 @@
   <div class="crt2" id="crt2" style="z-index: 8">
 
 <div class="crt" id="crt" style="z-index: 8">
+  
   <div class="hero-text" id="hero-text">
       <div class="title-container" style="z-index: 1;">
           <h1> <nobr> DANIEL GANDELMAN </nobr> </h1>
@@ -87,6 +88,7 @@ Artist Satement </div>
 </div>
 
 <div id="portfolio-container" class="content-container">
+  
   <div class="back-btn">
     <span><small> <small> <small> <small> v v v</small></small></small></small> </span>&nbsp;&nbsp; Return &nbsp;&nbsp;<span><small> <small> <small><small> v v v</small></small></small></small> </span>
 </div>
@@ -94,15 +96,21 @@ Artist Satement </div>
 <div class="bannersupport"></div>
 <div class="banner">
 Portfolio </div>
+
     <!-- Tag Filters Container -->
     <div class="tags-filter">
       <!-- Tags will be dynamically inserted here via script -->
     </div>
+
+    <button id="sortAscBtn">Sort by Date Ascending</button>
+    <button id="sortDescBtn">Sort by Date Descending</button>
+
   
     <!-- Gallery Container -->
-    <div class="gallery">
+    <div class="gallery" style="overflow-y: scroll; height: 82%;">
       <!-- Images and captions will be dynamically inserted here via script -->
     </div>
+
 </div>
 
 <div id="coverage-container" class="content-container">
@@ -130,10 +138,13 @@ Contact </div>
 
 </div>
 
-<div id="gallery-container" class="content-container">
-  <div class="crt" id="crt" style="z-index: 8">
-    <div id="galleryModal" class="modal" style="overflow-y: scroll;">
-      <div class="crt2" id="crt2" style="z-index: 8">
+
+
+<div id="gallery-container" class="content-container" style="display: block;">
+  <div class="crt" id="crt1modal" style="z-index: 8" style="display:none">
+  <div class="crt2" id="crt2" style="z-index: 8">
+      <div id="galleryModal" class="modal">
+        <span class="close">&times;</span>
         <div class="modal-content">    
           <div class="slideshow-container" id="slideshowContainer">
             <!-- Slideshow images will be dynamically inserted here -->
@@ -143,6 +154,8 @@ Contact </div>
               <!-- Thumbnails content -->
             </div>
           </div>
+          
+
           <div class="modal-info">
             <div id="modalTitle" class="modal-title"></div>
             <div id="modalSubtitle" class="modal-subtitle"></div>
@@ -151,7 +164,6 @@ Contact </div>
             <br><br>
             <div id="modalDescription" class="modal-description"></div>
           </div>
-          <span class="close">&times;</span>
         </div>
       </div>
     </div>
@@ -162,7 +174,6 @@ Contact </div>
 <script type="module" src="/artgenerator.js"></script>
 <script type="module" src="/screen.js"></script>
 <script type="module" src="/interaction.js"></script>
-<script type="module" src="portfolio/code/galleryData.js"></script>
 <script type="module" src="portfolio/code/galleryScript.js"></script>
 </div>
 </body>
