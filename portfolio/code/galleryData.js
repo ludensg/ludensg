@@ -34,7 +34,7 @@ const galleryData = [
   {
     "id": 3,
     "images": [
-      "/innov/blonde.png"
+      "/innov/tape1.png"
     ],
     "title": "Tape Art for Innovation Hub",
     "subtitle": "Masking Tape and Dry-Erase on Whiteboard",
