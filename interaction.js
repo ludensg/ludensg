@@ -34,7 +34,7 @@ function showContentMobile(containerId) {
     adjustElementMobile('hero-text', 'translateY(-27%) scale(1)');
     adjustElementMobile('mainbuttons', 'scale(1)', '0px', 'rgba(131, 116, 83, 0.247)');
 
-    displayContent(containerId, 'translateY(-190%)');
+    displayContent(containerId, 'translateY(-195%)');
 }
 
 function resetViewDesktop() {
