@@ -39,6 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
             tagSpan.classList.add('gallery-tag');
             tagsElement.appendChild(tagSpan);
         });
+
+        // Sort the tags array in alphabetical order before iteration
+        item.tags.sort().forEach(tag => {
+            const tagSpan = document.createElement('span');
+            tagSpan.textContent = tag;
+            tagSpan.classList.add('gallery-tag');
+            tagsElement.appendChild(tagSpan);
+        });
+
+
         itemElement.appendChild(tagsElement);
         return itemElement;
     }
@@ -79,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    sortGalleryByDate(false);
 
     function sortGalleryByDate(ascending = true) {
         galleryData.sort((a, b) => {
