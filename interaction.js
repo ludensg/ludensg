@@ -19,6 +19,12 @@ function isMobile() {
     return window.innerWidth <= 768;
 }
 
+function isMobileLandscape() {
+    // This will return true if the device is in landscape mode
+    return window.matchMedia("(orientation: landscape)").matches && window.innerWidth > window.innerHeight;
+}  
+  
+
 function showContentDesktop(containerId) {
     const heroText = document.getElementById('hero-text');
     const mainbuttons = document.getElementById('mainbuttons');
@@ -30,11 +36,18 @@ function showContentDesktop(containerId) {
 }
 
 function showContentMobile(containerId) {
-    // Example mobile adjustments, adjust these as necessary
-    adjustElementMobile('hero-text', 'translateY(-27%) scale(1)');
-    adjustElementMobile('mainbuttons', 'scale(1)', '0px', 'rgba(131, 116, 83, 0.247)');
+    if (window.matchMedia("(orientation: landscape)").matches) {
+        adjustElementMobile('hero-text', 'translateY(-20%) scale(1)');
+        adjustElementMobile('mainbuttons', 'scale(1)', '0px', 'rgba(131, 116, 83, 0.247)');
 
-    displayContent(containerId, 'translateY(-195%)');
+        displayContent(containerId, 'translateY(-400%)');
+    }
+    else {
+        adjustElementMobile('hero-text', 'translateY(-27%) scale(1)');
+        adjustElementMobile('mainbuttons', 'scale(1)', '0px', 'rgba(131, 116, 83, 0.247)');
+
+        displayContent(containerId, 'translateY(-150%)');
+    }
 }
 
 function resetViewDesktop() {

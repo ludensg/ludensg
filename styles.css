@@ -419,10 +419,54 @@ position: fixed;
     left: 0;
     right: 0;
     bottom: -100%; /* Start off-screen */
-    height: 65%;
+    height: 80%;
     padding: 1em;
-    width: 70%;
-  }
+    width: 80%;
+  }    
+}
 
-    
+@media only screen and (min-device-width: 480px) 
+                   and (max-device-width: 640px) 
+                   and (orientation: landscape) {
+
+                    .artist-statement {
+                        margin-top: 1vh; /* Less space on smaller screens */
+                        font-size: .9em;
+                        padding-left: .5em;
+                    }
+                
+                    .hero-text {
+                    padding-left: 30%; /* Less padding on the left for mobile */
+                    padding-top: 10px; /* Adjust top padding for mobile */
+                    padding-bottom: 0px; 
+                    }
+                
+                    .title-container {
+                        max-width: none; /* Allow the container to be full width */
+                        margin: 0; /* Remove auto margin */
+                        padding-left: 5%; /* Add some padding on the left */
+                        position: relative; /* Ensures the pseudo-element is positioned relative to this container */
+                        overflow: hidden;
+                        z-index: 3;
+                    }
+                
+                    h1 {
+                        font-size: calc(20px + 2vw); /* Increase minimum font size for mobile */
+                    }
+                
+                    p.subtitle {
+                        padding-left: 0px;
+                        padding-top: 9px;
+                        transform: scaleX(2.4) scaleY(1.3);
+                    }
+                
+                  .content-container {
+                    position: fixed;
+                    left: 0;
+                    right: 0;
+                    bottom: 0; /* Start off-screen */
+                    height: 80%;
+                    padding: 1em;
+                    width: 60%;
+                  }    
 }
