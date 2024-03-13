@@ -94,11 +94,15 @@ Artist Satement </div>
 <div class="bannersupport"></div>
 <div class="banner">
 Portfolio </div>
-  <div class="artist-statement">
-
-
-
-</div>
+    <!-- Tag Filters Container -->
+    <div class="tags-filter">
+      <!-- Tags will be dynamically inserted here via script -->
+    </div>
+  
+    <!-- Gallery Container -->
+    <div class="gallery">
+      <!-- Images and captions will be dynamically inserted here via script -->
+    </div>
 </div>
 
 <div id="coverage-container" class="content-container">
@@ -109,11 +113,7 @@ Portfolio </div>
 <div class="bannersupport"></div>
 <div class="banner">
 Coverage </div>
-  <div class="artist-statement">
-    
-
-
-</div>
+  
 </div>
 
 
@@ -125,18 +125,43 @@ Coverage </div>
 <div class="bannersupport"></div>
 <div class="banner">
 Contact </div>
-  <div class="artist-statement">
-    
 
-
-</div>
 </div>
 
 </div>
+
+<div class="crt" id="crt" style="z-index: 8">
+  <div id="galleryModal" class="modal">
+    <div class="crt2" id="crt2" style="z-index: 8">
+      <div class="modal-content">    
+        <div class="slideshow-container" id="slideshowContainer">
+          <!-- Slideshow images will be dynamically inserted here -->
+
+          <!-- Thumbnails will be dynamically inserted here, under the slideshow images -->
+          <div id="thumbnailContainer" class="thumbnail-container">
+            <!-- Thumbnails content -->
+          </div>
+        </div>
+        <div class="modal-info">
+          <div id="modalTitle" class="modal-title"></div>
+          <div id="modalSubtitle" class="modal-subtitle"></div>
+          <br>
+          <div id="modalDate" class="modal-date"></div>
+          <br><br>
+          <div id="modalDescription" class="modal-description"></div>
+        </div>
+        <span class="close">&times;</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <script type="module" src="/artgenerator.js"></script>
 <script type="module" src="/screen.js"></script>
 <script type="module" src="/interaction.js"></script>
+<script type="module" src="portfolio/code/galleryData.js"></script>
+<script type="module" src="portfolio/code/galleryScript.js"></script>
 </div>
 </body>
 </html>

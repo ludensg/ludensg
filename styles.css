@@ -470,3 +470,218 @@ position: fixed;
                     width: 60%;
                   }    
 }
+
+
+/* PORTFOLIO */
+
+.tags-filter {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px; /* Adjust spacing between tags */
+  }
+  
+  .tags-filter button {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: none;
+    background-color: #d6d078c2;
+    border-radius: 15px; /* Gives a rounded appearance */
+    margin: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .tags-filter button.active {
+    background-color: #ca9e0ce3; /* Active color */
+    color: rgb(51, 34, 4);
+    transform: scale(1.1); /* Slightly increase size */
+  }
+  
+  .tags-filter button:hover {
+    background-color: #ca9e0ce3; /* Active color */
+    color: rgba(94, 60, 2, 0.596);
+    transform: scale(1.1); /* Slightly increase size */
+  }
+  
+
+  .gallery-item {
+    width: 150px; /* Adjust based on your layout needs */
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    display: inline-block; /* Necessary for transform */
+    margin: 10px; /* Adjust spacing */
+    vertical-align: top; /* Align items when they're inline */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Optional: Adds a shadow effect */
+}
+
+.gallery-item img {
+    width: 100%; /* This ensures the image scales with the container */
+    max-width: 150px; /* Set a max-width to control size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05); /* Scale up the item */
+    z-index: 1; /* Ensure the item is above others when scaled */
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.gallery-item-title {
+    font-family: monospace;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.gallery-item-caption {
+    font-family: monospace;
+    margin-bottom: 5px;
+    font-size: 0.8em; /* Smaller text for the caption */
+}
+
+.gallery-item-tags {
+    font-family: monospace;
+    font-size: 0.7em; /* Even smaller text for tags */
+    color: #645512; /* Diminished emphasis on tags */
+    margin-top: 5px;
+}
+
+.gallery-tag {
+    display: inline-block; /* Tags are inline */
+    margin-right: 5px;
+}
+
+/* SUBGALLERIES */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  .modal-content {
+    display: flex; /* Use flexbox for layout */
+    background-color: #35290785;
+    color:#d3a973;
+    font-family: monospace;
+    margin: 10% auto; /* Adjusted for demonstration */
+    padding: 20px;
+    border: 1px solid #c8d456c0;
+    width: 80%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Optional: Adds shadow for depth */
+  }
+  
+  .close {
+    color: #f3db55;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .slideshow-container {
+    width: 50vh; 
+    height: 50vh;
+    padding: 10px; /* Adds some spacing inside the container */
+    position: relative;
+    overflow: hidden; /* Ensures that nothing extends beyond the container bounds */
+    display: flex; /* Utilizes Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.slide-image {
+    max-width: 100%; /* Ensures image does not exceed the container's width */
+    max-height: 100%; /* Ensures image does not exceed the container's height */
+    object-fit: contain; /* Ensures the image's aspect ratio is maintained */
+    position: absolute; /* Positions image absolutely within the relative container */
+    top: 0; /* Aligns image top to container top */
+    left: 0; /* Aligns image left to container left */
+    width: auto; /* Allows image width to adjust based on its height and aspect ratio */
+    height: auto; /* Allows image height to adjust based on its width and aspect ratio */
+    transition: opacity 2s ease-in-out; /* Smooth transition for crossfade effect */
+}
+
+  .slideshow-container img {
+    max-width: 100%; /* Makes images responsive to the container size */
+    max-height: 100%; /* Adjust height proportionally to avoid stretching */
+    display: block; /* Remove inline-block default spacing */
+    margin: 0 auto; /* Center images if they don't fill the container */
+  }
+  
+  .modal-info {
+    width: 66.666%; /* Right two-thirds of the modal */
+    padding: 10px; /* Optional: Adds some spacing */
+    display: flex;
+    flex-direction: column; /* Stack info vertically */
+  }
+
+  .modal-title, .modal-description, .thumbnail-container {
+    margin-bottom: 10px; /* Add some space between info elements */
+  }
+
+  .thumbnail-container {
+    display: flex;
+    justify-content: center; /* Center the thumbnails */
+    flex-wrap: wrap; /* Allow thumbnails to wrap if there are many */
+    padding: 10px 0; /* Add some vertical padding for separation from slideshow images */
+  }
+  
+  .thumbnail-container img {
+    width: 60px; /* Or whatever size you prefer */
+    margin: 5px; /* Add some space between thumbnails */
+    cursor: pointer;
+    opacity: 0.6; /* Make thumbnails slightly opaque (optional) */
+  }
+  
+  .thumbnail-container img:hover,
+  .thumbnail-container img.active {
+    opacity: 1; /* Full opacity when hovered over or active */
+  }
+
+  .slide-image-link {
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Keeps text color consistent with surrounding text */
+    display: inline-block; /* Allows size adjustments and margin, if necessary */
+}
+
+.left-arrow, .right-arrow {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #b99f49; /* Adjust the color as necessary */
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5); /* Optional */
+    padding: 10px;
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+
