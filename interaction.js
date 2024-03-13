@@ -31,7 +31,6 @@ function showContentDesktop(containerId) {
 
     adjustElementDesktop(heroText, 'translateY(-40%) scale(0.5)', 'rgba(231, 216, 182, 0.685)');
     adjustElementDesktop(mainbuttons, 'scale(1.4)', '-20px', 'rgba(199, 175, 124, 0.514)');
-
     displayContent(containerId, 'translateY(-135%)');
 }
 
@@ -48,6 +47,8 @@ function showContentMobile(containerId) {
 
         displayContent(containerId, 'translateY(-150%)');
     }
+
+    enableScrolling();
 }
 
 function resetViewDesktop() {
@@ -56,6 +57,7 @@ function resetViewDesktop() {
 
 function resetViewMobile() {
     resetViewCommon('translateY(0%) scale(1)', 'scale(1)', '0px', 'rgba(131, 116, 83, 0.247)');
+    disableScrolling();
 }
 
 function adjustElementDesktop(element, transform, marginTop = null, backgroundColor = null) {
@@ -108,3 +110,29 @@ function smoothTransform(element, transform) {
         });
     }
 }
+
+
+
+
+function disableScrolling(){
+    document.body.addEventListener('touchmove', preventDefault, { passive: false });
+    document.body.style.overflow = 'hidden';
+    document.body.style.position = 'fixed'; // Lock the body's position
+    document.body.style.width = '100%'; // Prevent width from being inadvertently set to less than the viewport width
+}
+
+function enableScrolling(){
+    document.body.removeEventListener('touchmove', preventDefault, { passive: false });
+    document.body.style.overflow = '';
+    document.body.style.position = '';
+}
+
+function preventDefault(e){
+    e.preventDefault();
+}
+
+// Call this function to disable scrolling
+disableScrolling();
+
+// Call this function to enable scrolling
+// enableScrolling();
