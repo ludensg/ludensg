@@ -185,32 +185,13 @@ document.querySelectorAll('.gallery-item').forEach(item => {
   
   function openModal() {
     document.getElementById('galleryModal').style.display = 'block';
-    disableScrolling();
   }
   
   function closeModal() {
     document.getElementById('galleryModal').style.display = 'none';
-    enableScrolling();
   }
   
   document.querySelector('.close').addEventListener('click', function() {
     closeModal();
   });
   
-
-  function disableScrolling(){
-    document.body.addEventListener('touchmove', preventDefault, { passive: false });
-    document.body.style.overflow = 'hidden';
-    document.body.style.position = 'fixed'; // Lock the body's position
-    document.body.style.width = '100%'; // Prevent width from being inadvertently set to less than the viewport width
-}
-
-function enableScrolling(){
-    document.body.removeEventListener('touchmove', preventDefault, { passive: false });
-    document.body.style.overflow = '';
-    document.body.style.position = '';
-}
-
-function preventDefault(e){
-    e.preventDefault();
-}
