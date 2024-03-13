@@ -53,6 +53,7 @@ function showContentMobile(containerId) {
 
 function resetViewDesktop() {
     resetViewCommon('translateY(0) scale(1)', 'scale(1)', '-10px', 'rgba(131, 116, 83, 0.247)');
+    disableScrolling();
 }
 
 function resetViewMobile() {

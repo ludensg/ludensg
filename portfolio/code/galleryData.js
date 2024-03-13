@@ -72,7 +72,9 @@ const galleryData = [
     "description": "~",
     "tags": [
       "painting",
-      "watercolor"
+      "watercolor",
+      "decollage",
+      "assemblage"
     ],
     "date": "February, 2024"
   },
