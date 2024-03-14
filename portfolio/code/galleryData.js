@@ -16,6 +16,22 @@ const galleryData = [
   {
     "id": 2,
     "images": [
+      "/doubleexpo/huh.jpg"
+    ],
+    "title": "Double Exposure",
+    "subtitle": "Ink and Watercolor on Paper",
+    "description": "~",
+    "tags": [
+      "painting",
+      "watercolor",
+      "drawing",
+      "ink"
+    ],
+    "date": "February 14, 2024"
+  },
+  {
+    "id": 3,
+    "images": [
       "/faces/faces.jpg"
     ],
     "title": "Faces",
@@ -28,7 +44,7 @@ const galleryData = [
     "date": "September, 2022"
   },
   {
-    "id": 3,
+    "id": 4,
     "images": [
       "/fishing/image.png"
     ],
@@ -42,7 +58,7 @@ const galleryData = [
     "date": "October, 2022"
   },
   {
-    "id": 4,
+    "id": 5,
     "images": [
       "/fountain/blurredex.png",
       "/fountain/urinalleft.jpg",
@@ -59,22 +75,6 @@ const galleryData = [
       "ephemeral"
     ],
     "date": "August, 2023"
-  },
-  {
-    "id": 5,
-    "images": [
-      "/huh/huh.jpg"
-    ],
-    "title": "Huh",
-    "subtitle": "Ink and Watercolor on Paper",
-    "description": "~",
-    "tags": [
-      "painting",
-      "watercolor",
-      "drawing",
-      "ink"
-    ],
-    "date": "February 14, 2024"
   },
   {
     "id": 6,
@@ -366,6 +366,7 @@ const galleryData = [
     "subtitle": "Acrylic on Canvas, (3'' X 3'')",
     "description": "The first Wikipedia Eye, part of the 'Elmyr de Hory' exhibit at the Museum of Fine Arts at Florida State University.",
     "tags": [
+      "painting",
       "acrylic",
       "conceptual",
       "performance",

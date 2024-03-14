@@ -423,6 +423,18 @@ position: fixed;
     padding: 1em;
     width: 80%;
   }    
+
+  .modal-content {
+    margin: 5px auto; /* Provide more margin on very small screens */
+    width: 40%; 
+    max-width: none; /* Remove max-width constraint */
+  }
+
+  .close {
+    top: 5%; /* Position closer to the top to be easily reachable */
+    right: 5%; /* Adjust position to be more towards the edge */
+    font-size: 24px; /* Slightly reduce the size to fit smaller screens better */
+  }
 }
 
 @media only screen and (min-device-width: 480px) 
