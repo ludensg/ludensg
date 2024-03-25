@@ -71,7 +71,7 @@ font-size: calc(6px + 7vw);
 color: #4d381cc2;
 background: radial-gradient(closest-side, rgba(204, 191, 131, 0.404) 70%, transparent 120%);
 font-family: 'helvbold', sans-serif;
-margin-left: 0px; 
+margin-left: 30px; 
 margin-right: 200px; 
 margin-bottom: -5px; /* Adjust the space between title and subtitle */
 transition: margin-bottom ease 0.5s;
@@ -85,8 +85,8 @@ p.subtitle {
     font-size: calc(4px + 2vw);
     color: #462b0d6b;
     font-family: 'helvcomp', sans-serif;
-    margin-top: 1px;
-    margin-left: 0px; 
+    margin-top: 8px;
+    margin-left: 30px; 
     transform: scaleX(3.5) scaleY(1);
     transform-origin: left;
     letter-spacing: .01px;
@@ -114,7 +114,6 @@ p.subtitle {
 
   
   .buttons button {
-    /* Nintendo DS PictoChat UI inspired button styles */
     background: #69541da6; /* Light grey */
     border: 1.5px solid #eeeeee77; /* Black border */
     border-radius: 5px;
@@ -131,7 +130,7 @@ p.subtitle {
     transition: transform ease 0.5s;
     transition: color 0.5s;
         flex: 1; /* Makes buttons flexible */
-    min-width: 200px; /* Minimum width for buttons, adjust as necessary */
+    min-width: 250px; /* Minimum width for buttons, adjust as necessary */
     margin: 0 30px; /* Ensures buttons don't touch each other */
     margin-bottom: 20px;    
   }
@@ -379,10 +378,27 @@ display: block;
 position: fixed;
   }
 
+.profile{
+  position: fixed; right: -.5%; bottom: 0%; z-index: 0;
+  /* mix-blend-mode:color-dodge; */
+  filter:invert(1);
+  mix-blend-mode:exclusion;
+  opacity: .8;
 
+}
 
 /* Responsive styles for mobile devices */
 @media (max-width: 768px){
+  .profile {
+    top: 1%; 
+    left: 13%;
+    z-index: -1;
+    /* mix-blend-mode:difference; */
+    filter:invert(0);
+    height: 30vh;
+    transform: rotate(0.10turn);
+  }
+
     .artist-statement {
         margin-top: 1vh; /* Less space on smaller screens */
         font-size: .9em;
@@ -402,16 +418,26 @@ position: fixed;
         position: relative; /* Ensures the pseudo-element is positioned relative to this container */
         overflow: hidden;
         z-index: 3;
+        margin-top: 50%;
+        background-color: #e9e9e91e;
+        background-blend-mode: screen;
     }
 
     h1 {
         font-size: calc(20px + 2vw); /* Increase minimum font size for mobile */
+        background-color: #e9e9e91e;
+        background-blend-mode: screen;
+        transform: scaleX(1.3) scaleY(2.4);
+        margin-left: -1.3%;
     }
 
     p.subtitle {
         padding-left: 0px;
         padding-top: 9px;
-        transform: scaleX(2.4) scaleY(1.3);
+        transform: scaleX(2.8) scaleY(1.5);
+        background-color: #e9e9e9ef;
+        background-blend-mode: screen;
+        margin-left: -1.3%;
     }
 
   .content-container {
@@ -435,6 +461,7 @@ position: fixed;
     right: 5%; /* Adjust position to be more towards the edge */
     font-size: 24px; /* Slightly reduce the size to fit smaller screens better */
   }
+
 }
 
 @media only screen and (min-device-width: 480px) 
@@ -704,3 +731,29 @@ position: fixed;
 }
 
 
+
+/* CONTACT */
+
+/* Container styling */
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  min-height: 20vh; /* Full viewport height */
+  text-align: center; /* Center text */
+}
+
+/* Form styling */
+form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea {
+  width: 100%; /* Full width */
+  padding: 10px;
+  margin: 10px 0; /* Margin for top and bottom */
+  box-sizing: border-box; /* Include padding in total width and height */
+}

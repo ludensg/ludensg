@@ -12,14 +12,15 @@
 <body style="overflow: hidden;">
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 
-  <div class="crt2" id="crt2" style="z-index: 8">
+  <div class="crt2" id="crt2" style="z-index: 8"></div>
 
-<div class="crt" id="crt" style="z-index: 8">
-  
+<div class="crt" id="crt" style="z-index: 8"></div>
+  <img src="/misc/photos/nobgprofile.png" class="profile" height="400vh" width="auto">
+
   <div class="hero-text" id="hero-text">
       <div class="title-container" style="z-index: 1;">
           <h1> <nobr> DANIEL GANDELMAN </nobr> </h1>
-          <p class="subtitle"><span>&nbsp;artist/computer scientist/homo ludens</span></p>
+          <p class="subtitle" style="background-color: #ccc48017; background-blend-mode:screen;"><span>&nbsp;artist/computer scientist/homo ludens</span></p>
           <div class="buttons" id="mainbuttons" 
           style="align-items: stretch; margin-top: -10px; transform: scale(1); padding-top: 15px;
           transition: margin-top ease 0.5s; transition: transform ease 0.5s; transition: align-items ease 0.5s;
@@ -27,7 +28,8 @@
           padding-bottom: -5px;
           background-color: rgba(131, 116, 83, 0.247);">
             <button id="artist-statement-btn";>Artist Statement</button>
-            <button id="portfolio-btn">Portfolio</button>
+            <button id="nportfolio-btn">Curated Portfolio</button>
+            <button id="portfolio-btn">Extended Portfolio</button>
             <button id="coverage-btn";>Coverage</button>
             <button id="contact-btn">Contact</button>
             <button id="art-btn">Click Me!</button>
@@ -95,7 +97,7 @@ Artist Satement </div>
 
 <div class="bannersupport"></div>
 <div class="banner">
-Portfolio </div>
+Extended Portfolio </div>
 
     <!-- Tag Filters Container -->
     <div class="tags-filter">
@@ -129,6 +131,23 @@ Portfolio </div>
 
 </div>
 
+<div id="nportfolio-container" class="content-container">
+  
+  <div class="back-btn">
+    <span><small> <small> <small> <small> v v v</small></small></small></small> </span>&nbsp;&nbsp; Return &nbsp;&nbsp;<span><small> <small> <small><small> v v v</small></small></small></small> </span>
+</div>
+
+<div class="bannersupport"></div>
+<div class="banner">
+Curated Portfolio </div>
+  
+    <!-- Gallery Container -->
+    <div class="gallery" style="overflow-y: scroll; height: 82%;">
+      <!-- Images and captions will be dynamically inserted here via script -->
+    </div>
+
+</div>
+
 <div id="coverage-container" class="content-container">
   <div class="back-btn">
     <span><small> <small> <small> <small> v v v</small></small></small></small> </span>&nbsp;&nbsp; Return &nbsp;&nbsp;<span><small> <small> <small><small> v v v</small></small></small></small> </span>
@@ -147,10 +166,47 @@ Coverage </div>
 </div>
 
 <div class="bannersupport"></div>
-<div class="banner">
-Contact </div>
+<div class="banner"> Contact </div>
+<div class="form-container">
+  <form action="https://formspree.io/f/mayrdrqq" method="POST">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="_replyto" required>
+    <br><br>
+
+    <input name="subject" type="hidden" value="Contact message from {{ name }}" />
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <br>
+
+    <button style=" background: #74640ba6; /* Light grey */
+    border: 1.5px solid #eeeeee77; /* Black border */
+    border-radius: 5px;
+    font-family: 'bitsumishi', sans-serif;
+    font-size: large;
+    color: #ffffffee;
+    cursor: grab;"
+    
+    type="submit">Send</button>
+  </form>
+  <div class="social-icons" style="padding-top: 5vh; padding-left: 5%;">
+    <a href="https://instagram.com/ludens.g" target="_blank">
+      <img src="/misc/photos/inst.png" alt="Instagram" style="width: 50px; height: 50px;">
+    </a>
+    <br><br><br>
+    <a href="https://linkedin.com/in/dgandelman" target="_blank">
+      <img src="/misc/photos/linkedin.png" alt="LinkedIn" style="width: 50px; height: 50px;">
+    </a>
+  </div>
+</div>
+
 
 </div>
+
 
 </div>
 
@@ -182,8 +238,7 @@ Contact </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+
 </div>
 
 
