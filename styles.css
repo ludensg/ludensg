@@ -421,14 +421,18 @@ position: fixed;
         margin-top: 50%;
         background-color: #e9e9e91e;
         background-blend-mode: screen;
+        border-top: #222222;
+        border-radius: 10%;
     }
 
     h1 {
         font-size: calc(20px + 2vw); /* Increase minimum font size for mobile */
         background-color: #e9e9e91e;
         background-blend-mode: screen;
+        border-radius: 10%;
         transform: scaleX(1.3) scaleY(2.4);
-        margin-left: -1.3%;
+        margin-left: 1%;
+        margin-top: 8%;
     }
 
     p.subtitle {
@@ -437,7 +441,7 @@ position: fixed;
         transform: scaleX(2.8) scaleY(1.5);
         background-color: #e9e9e9ef;
         background-blend-mode: screen;
-        margin-left: -1.3%;
+        margin-left: 1%;
     }
 
   .content-container {
