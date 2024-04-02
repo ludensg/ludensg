@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Setup event listeners for opening content
-    const buttons = ['artist-statement-btn', 'portfolio-btn', 'nportfolio-btn', 'coverage-btn', 'contact-btn'];
+    const buttons = ['artist-statement-btn', 'portfolio-btn', 'nportfolio-btn', 'exhi-btn', 'coverage-btn', 'contact-btn'];
     buttons.forEach(btnId => {
         document.getElementById(btnId).addEventListener('click', function() {
             const containerId = btnId.replace('-btn', '-container');

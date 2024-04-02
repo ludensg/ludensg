@@ -66,6 +66,13 @@ margin: 0 auto; /* Center the container */
 background:radial-gradient(closest-side, rgba(206, 198, 162, 0.404) 70%, transparent 120%);/* Semi-transparent white */
 }
 
+/*
+.title-container {
+  overflow-y: auto; 
+}
+*/
+
+
 h1 {
 font-size: calc(6px + 7vw);
 color: #4d381cc2;
@@ -103,7 +110,7 @@ p.subtitle {
     background-color: rgba(236, 233, 225, 0.356);
     padding: 1em;
     padding-top: .5em;
-    padding-bottom: 1em;
+    padding-bottom: 1px;
     padding-right: 1em;
     text-align: justify;
     border-left: 2px solid var(--color-accent2);
@@ -189,6 +196,7 @@ p.subtitle {
     transition: transform 0.45s ease; /* Smooth transition for sliding effect */
     align-items: center;
     padding: 1em;
+    padding-bottom: 5%;
     border-top: 3px solid var(--color-accent2);
     border-style: double;
 
@@ -466,6 +474,21 @@ position: fixed;
     font-size: 24px; /* Slightly reduce the size to fit smaller screens better */
   }
 
+  .list-entry {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .thumbnail-container2 {
+    margin-right: 0;
+    margin-bottom: 10px; 
+    margin-left: 50px;
+    align-items:center;
+  }
+  
+  .text-content {
+    text-align: center;
+  }
 }
 
 @media only screen and (min-device-width: 480px) 
@@ -760,4 +783,146 @@ input, textarea {
   padding: 10px;
   margin: 10px 0; /* Margin for top and bottom */
   box-sizing: border-box; /* Include padding in total width and height */
+}
+
+.list {
+  width: 100%; /* Adjust if necessary */
+  background-color: rgba(236, 233, 225, 0.356);
+  padding-top: .5em;
+  padding-bottom: 1px;
+  padding-right:8px;
+  height: 94.5%; /* Example max-height, adjust based on your design */
+  overflow-y: auto; /* Enables vertical scrolling if content overflows */
+  overflow-x: hidden;
+}
+
+
+.list-entry {
+  display: flex;
+  align-items: start;
+  margin-bottom: 20px;
+}
+
+.list-entry img {
+  margin-right: 5px;
+}
+
+.list-entry div.text-content {
+  flex: 1;
+}
+/*
+.list-entry div {
+  flex: 1;
+} */
+
+.list-entry h2 {
+  margin: 0 0 0px 0;
+  font-size: 28px;
+  font-family: 'helvbold';
+  padding-top: 5px;
+  padding-left: 5px;
+}
+
+.list-entry p {
+  margin: 0;
+  font-size: 14px;
+  font-family: 'helvlight';
+  text-align: justify;
+  line-height: 150%;  
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+a:link {
+  color: rgb(179, 148, 14);
+}
+
+/* Visited link */
+a:visited {
+  color: rgb(190, 76, 22);
+}
+
+/* Mouse over link */
+a:hover {
+  color: rgb(255, 115, 0);
+}
+
+/* Selected link */
+a:active {
+  color: yellow;
+}
+
+.thumbnail-container2 {
+  margin-right: 1px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumbnail-container2 img {
+  margin-bottom: 10px; /* Space between image and button */
+}
+
+ul.press-coverage {
+  list-style-type: none;
+  padding: 0;
+}
+
+.press-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+  background-color: #5c5c5c46;
+}
+
+.press-item img {
+  width: 100%; /* Adjust based on layout; consider max-width for larger screens */
+  margin-bottom: 10px;
+}
+
+.press-content {
+  text-align: center;
+  font-family: 'helvlight';
+}
+
+.press-title {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'helvbold';
+  background-color: #f7f7f7b4;
+}
+
+.press-publication {
+  font-size: 16px;
+  color: #000000;
+  margin: 5px 0;
+  font-family: 'helvlight';
+}
+
+::marker{
+  color:#553802;
+}
+
+@media (min-width: 768px) {
+  .press-item {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .press-item img {
+    width: auto;
+    max-width: 200px;
+    margin-right: 20px;
+  }
+  
+  .press-content {
+    text-align: left;
+  }
 }
